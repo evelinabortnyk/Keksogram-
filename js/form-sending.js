@@ -2,7 +2,7 @@ import {uploudForm, imgPreview, textDescription} from "./validation.js";
 
 async function sendForm(obj){
     try{
-        const response = await fetch('http://localhost:4000/users', {
+        const response = await fetch('https://keksogram.onrender.com/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
