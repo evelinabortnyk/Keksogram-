@@ -1,45 +1,14 @@
 import http from 'node:http'
-import fs from 'node:fs'
 import usersArr from './post.js'
 
 const PORT = 4000
 
 http.createServer(function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*')
-    res.setHeader('Access-Control-Allow-Mrthods', 'GET, POST, OPTIONS')
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
-    // POST
-    if (req.method === 'POST' && req.url === '/dataUsers') {
-        let body = ''
-        console.log(req.method)
-
-        req.on('data', chunk => {
-            body += chunk.toString()
-        });
-
-        req.on('end', () => {
-            try {
-                const parseData = JSON.parse(body)
-                usersArr = parseData
-                if (typeof (parseData) != 'object') {
-                    console.log('!arr')
-                    res.writeHead(400, { 'Content-Type': 'application/json' })
-                    res.end(JSON.stringify({ error: 'wait Array' }))
-                }
-                usersArr = parseData
-                console.log(req.url)
-                res.writeHead(200, { 'Content-Type': 'application/json' })
-                return res.end(JSON.stringify(parseData))
-
-            } catch (error) {
-                res.writeHead(200, { 'Content-Type': 'application/json' })
-                return res.end(JSON.stringify({ error: 'error' }))
-            }
-        });
-
-        return;
-    } else if(req.method === 'POST' && req.url === '/gram'){
+    if(req.method === 'POST' && req.url === '/gram'){
         let body = ''
         req.on('data', chunk => {
             body += chunk.toString()
@@ -50,7 +19,9 @@ http.createServer(function (req, res) {
             usersArr.push(newUser)
             return res.end(JSON.stringify(usersArr))
         })
-    } else if (req.method === "GET") {
+
+        return
+    } else if (req.method === "GET" && req.url === '/users' ) {
         if (usersArr) {
             res.writeHead(200, { 'Content-Type': 'application/json' })
             res.end(JSON.stringify(usersArr))
