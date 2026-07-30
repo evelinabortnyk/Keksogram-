@@ -8,16 +8,33 @@ http.createServer(function (req, res) {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
-    if(req.method === 'POST' && req.url === '/gram'){
+    if(req.method === 'POST' && req.url === '/users'){
         let body = ''
         req.on('data', chunk => {
             body += chunk.toString()
         });
         req.on('end', ()=> {
-            const newUser = JSON.parse(body) 
-            newUser.id = usersArr.length + 1
-            usersArr.push(newUser)
-            return res.end(JSON.stringify(usersArr))
+            try {
+                const newUser = JSON.parse(body)
+    
+                newUser.id = usersArr.length + 1
+                usersArr.push(newUser)
+    
+                res.writeHead(201, {
+                    'Content-Type': 'application/json'
+                })
+    
+                return res.end(JSON.stringify(usersArr))
+    
+            } catch(error) {
+                res.writeHead(400, {
+                    'Content-Type': 'application/json'
+                })
+    
+                return res.end(JSON.stringify({
+                    error: "Invalid JSON"
+                }))
+            }
         })
 
         return

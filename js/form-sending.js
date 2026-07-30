@@ -1,9 +1,25 @@
 import {uploudForm, imgPreview, textDescription} from "./validation.js";
-import { sendForm } from "./server/sendForm.js";
 
+async function sendForm(obj){
+    try{
+        const response = await fetch('http://localhost:4000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+        const data = await response.json()
+        console.log(data)
+    } catch (error) {
+        console.log('Error:', error)
+        errorMessageCreate()
+    }
+}
+ 
 function formSubmit(urlValue, hashtagsValue, descriptionValue, filterValue, scaleVal ){
     let obj = {}
-   
+
     obj.id = 0;
     obj.url = `${urlValue}`;
     obj.description = `${descriptionValue}`;
@@ -31,20 +47,20 @@ function sendingForm(hashtagsErr, hashtags){
 }
 
 successButton.addEventListener('click', e=>{
+    e.preventDefault()
     success.classList.add('hidden')
     location.reload()
 })
 
 // error sending
+
 const errorBlock = document.querySelector('.error')
 const errorButton = document.querySelector('.error__button').addEventListener('click', e=> {
     errorBlock.classList.add('hidden')
 })
 
-
 function errorMessageCreate() {
     errorBlock.classList.remove('hidden')
 }
 
-
-export {sendingForm, errorMessageCreate}
+export {sendingForm}
