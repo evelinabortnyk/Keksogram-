@@ -1,5 +1,3 @@
-// const { json } = require("stream/consumers")
-
 const descriotionsArr = [
     'Ловлю момент тут і зараз',
     'Відчуваю магію миті',
@@ -20,6 +18,7 @@ const comments = [
     'Обличчя людей на фотці перекошені, ніби їх побивають. Як можна було зловити такий невдалий момент?',
 ]
 const names = ['Марко', 'Софія', 'Даніель', 'Аліса', 'Тимофій', 'Мія', 'Назар', 'Емма', 'Артем', 'Ліна', 'Ілля', 'Вікторія', 'Олексій', 'Даша', 'Кирило']
+
 const hashtagsArr = ['#sunsetvibes', '#dailyinspo','#urbanexplorer','#mindfulmoments', '#techlife', '#creativeflow', '#weekendmood', '#natureescape', '#foodlover', '#goodtimesahead', '#simplepleasures', '#dreambigdaily', '#travelstories', '#staycurious', '#digitalworld', '#happyplace', '#livelifefully', '#cozycorner', '#newadventures', '#photodaily',]
 
 let usersArr = []
@@ -82,21 +81,3 @@ function getRandom(max, min){
 usersArr = makeUsersArr()
 
 export default usersArr
-
-// async function sendData(){
-//     try{
-//         const response = await fetch('http://localhost:8080/dataUsers', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(dataArr)
-//         })
-        
-//         const result = await response.json()
-        
-//     } catch (error) {
-//         console.log('Error:', error)
-//     }
-// }
-// sendData()

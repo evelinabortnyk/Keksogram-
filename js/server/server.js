@@ -1,5 +1,5 @@
 import http from 'node:http'
-import usersArr from './post.js'
+import usersArr from './data.js'
 
 const PORT = 4000
 
