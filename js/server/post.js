@@ -1,4 +1,4 @@
-const { json } = require("stream/consumers")
+// const { json } = require("stream/consumers")
 
 const descriotionsArr = [
     'Ловлю момент тут і зараз',
@@ -79,23 +79,24 @@ function getRandom(max, min){
     return min ? Math.floor(Math.random() * (max - min + 1)) + min : Math.floor(Math.random() * max)
 }
 
-let dataArr= makeUsersArr()
+usersArr = makeUsersArr()
 
+export default usersArr
 
-async function sendData(){
-    try{
-        const response = await fetch('http://localhost:8080/dataUsers', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dataArr)
-        })
+// async function sendData(){
+//     try{
+//         const response = await fetch('http://localhost:8080/dataUsers', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(dataArr)
+//         })
         
-        const result = await response.json()
+//         const result = await response.json()
         
-    } catch (error) {
-        console.log('Error:', error)
-    }
-}
-sendData()
+//     } catch (error) {
+//         console.log('Error:', error)
+//     }
+// }
+// sendData()

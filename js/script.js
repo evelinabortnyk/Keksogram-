@@ -14,9 +14,10 @@ import { scalingImg, scaleValue} from "./scaling.js";
 import { sendingForm } from "./form-sending.js";
 import { filtersPostCreate } from "./filters-data-arr.js";
 
+
 async function getUsers(){
     try {
-        const response = await fetch('http://localhost:8080/dataUsers')
+        const response = await fetch('http://localhost:4000/dataUsers')
         if(!response.ok) {
             throw new Error('Error server', response.status)
         }
