@@ -1,7 +1,8 @@
-const http = require('http')
-const PORT = 8080
+import http from 'node:http'
+import fs from 'node:fs'
+import usersArr from './post.js'
 
-let usersArr = null
+const PORT = 4000
 
 http.createServer(function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*')
@@ -47,7 +48,6 @@ http.createServer(function (req, res) {
             const newUser = JSON.parse(body) 
             newUser.id = usersArr.length + 1
             usersArr.push(newUser)
-            // res.writeHead(201, { 'Content-Type': 'application/json' }) // ERROR
             return res.end(JSON.stringify(usersArr))
         })
     } else if (req.method === "GET") {
