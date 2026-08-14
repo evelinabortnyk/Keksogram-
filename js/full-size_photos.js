@@ -72,7 +72,7 @@ function fullSizeCreate(target, element, arr){
         commentsLoaderBtn.addEventListener('click', e=> {
             e.preventDefault()
             count = openComments(arrElementTarget.comments, count, commentsLoaderBtn)
-            element.querySelector('.social__comment-count').textContent = `${count} з ${commentsLenght}` 
+            element.querySelector('.social__comment-count').textContent = `${count} out of ${commentsLenght}` 
 
             createCommentsPrewue(arrElementTarget.comments, count)
         })
