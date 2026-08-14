@@ -60,7 +60,9 @@ function fullSizeCreate(target, element, arr){
         }
         
         if(commentsLenght > 5){
-            element.querySelector('.social__comment-count').textContent = `${count} з ${commentsLenght}` 
+            element.querySelector('.social__comment-count').classList.remove('hidden')
+
+            element.querySelector('.social__comment-count').textContent = `${count} out of ${commentsLenght}` 
         }else{
             element.querySelector('.social__comment-count').classList.add('hidden')
             commentsLoaderBtn.classList.add('hidden')
