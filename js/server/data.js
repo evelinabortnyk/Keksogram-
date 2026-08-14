@@ -1,23 +1,23 @@
 const descriotionsArr = [
-    'Ловлю момент тут і зараз',
-    'Відчуваю магію миті',
-    'Живу кольорами дня',
-    'Трохи сонця всередині',
-    'Де серце — там дім',
-    'Мій маленький всесвіт',
-    'Щастя в простих речах',
-    'Атмосфера говорить сама',
-    'Легкість у кожному русі',
-    'День, створений для мрій',
+    'Seizing the moment here and now',
+    'Feeling the magic of the moment',
+    'Living in the colors of the day',
+    'A little sunshine within',
+    'Home is where the heart is',
+    'My little universe',
+    'Happiness in simple things',
+    'The atmosphere speaks for itself',
+    'Lightness in every movement',
+    'A day made for dreams',
 ]
 const comments = [
-    'Загалом все непогано. Але не всі.',
-    'Коли ви робите фотографію, добре б прибирати палець із кадру. Зрештою, це просто непрофесійно.',
-    'Моя бабуся випадково чхнула з фотоапаратом у руках і у неї вийшла фотографія краща.',
-    'Я послизнувся на банановій шкірці і впустив фотоапарат на кота і у мене вийшла фотографія краще.',
-    'Обличчя людей на фотці перекошені, ніби їх побивають. Як можна було зловити такий невдалий момент?',
+    'Overall, it’s not bad. But not quite right.',
+    'When taking a photo, it’s a good idea to keep your finger out of the frame. After all, it’s just unprofessional.',
+    'My grandmother accidentally sneezed while holding the camera, and she got a better shot.',
+    'I slipped on a banana peel, dropped the camera on the cat, and got a better shot.',
+    'The people’s faces in the photo are contorted, as if they’re being beaten up. How could you capture such an unfortunate moment?',
 ]
-const names = ['Марко', 'Софія', 'Даніель', 'Аліса', 'Тимофій', 'Мія', 'Назар', 'Емма', 'Артем', 'Ліна', 'Ілля', 'Вікторія', 'Олексій', 'Даша', 'Кирило']
+const names = ['Marko', 'Sofia', 'Daniel', 'Alisa', 'Tymofii', 'Mia', 'Nazar', 'Emma', 'Artem', 'Lina', 'Illia', 'Victoria', 'Oleksii', 'Dasha', 'Kyrylo']
 
 const hashtagsArr = ['#sunsetvibes', '#dailyinspo','#urbanexplorer','#mindfulmoments', '#techlife', '#creativeflow', '#weekendmood', '#natureescape', '#foodlover', '#goodtimesahead', '#simplepleasures', '#dreambigdaily', '#travelstories', '#staycurious', '#digitalworld', '#happyplace', '#livelifefully', '#cozycorner', '#newadventures', '#photodaily',]
 
