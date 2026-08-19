@@ -31,6 +31,7 @@ async function getUsers(){
 }
 
 let usersArr = await getUsers()
+usersArr.lenght != 0 ? document.querySelector('.modal-loading').classList.add('hidden') : ''
 
 
 //module1-task2

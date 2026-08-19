@@ -27,7 +27,11 @@ function filtersPostCreate(e, users) {
     let target =e.target.id
     removeFragment() 
 
+    document.querySelector('.modal-loading').classList.remove('hidden')
+
     setTimeout(()=>{
+        document.querySelector('.modal-loading').classList.add('hidden')
+
         switch (target) {
             case  'filter-default':
                 displayUsersPhotos(usersArr)
