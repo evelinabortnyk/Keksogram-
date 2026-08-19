@@ -24,7 +24,7 @@ const hashtagsArr = ['#sunsetvibes', '#dailyinspo','#urbanexplorer','#mindfulmom
 let usersArr = []
 function makeUsersArr(){
     const ID_RANGE ={
-        min: 1, max: 25
+        min: 1, max: 26,
     }
     for (let i= ID_RANGE.min; i <=ID_RANGE.max; i++) {
         const LIKES_RANGE ={
