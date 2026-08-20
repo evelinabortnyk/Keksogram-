@@ -115,7 +115,7 @@ biggerBtn.addEventListener('click', e=>{
 
 const uplaudSubmit = document.querySelector('#upload-submit')
 
-uplaudSubmit.addEventListener('click', e => sendingForm(hashtagsErr, hashtags))
+uplaudSubmit.addEventListener('click', e => sendingForm(e, hashtagsErr, hashtags))
 
 // filters posts module1-task10
 

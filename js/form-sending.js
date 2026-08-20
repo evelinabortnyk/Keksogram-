@@ -20,14 +20,15 @@ function formSubmit(urlValue, hashtagsValue, descriptionValue, filterValue, scal
     let obj = {}
 
     obj.id = 0;
-    obj.url = `${urlValue}`;
-    obj.description = `${descriptionValue}`;
+    obj.url = urlValue;
+    obj.description = descriptionValue;
     obj.likes = 0;
     obj.comments = [];
-    obj.filter = `${filterValue}`;;
-    obj.scaleVal = `${scaleVal}`;
-    obj.hashtagsValue = `${hashtagsValue}`;
+    obj.filter = filterValue;
+    obj.scaleVal = scaleVal;
+    obj.hashtags = hashtagsValue.split(' ');
 
+    console.log(obj)
     sendForm(obj)
 }
 // success sending 
@@ -35,8 +36,9 @@ function formSubmit(urlValue, hashtagsValue, descriptionValue, filterValue, scal
 const successButton = document.querySelector('.success__button')
 const success = document.querySelector('.success')
 
-function sendingForm(hashtagsErr, hashtags){
-    console.log(hashtags, hashtagsErr)
+function sendingForm(target,hashtagsErr, hashtags){
+    target.preventDefault()
+
     if(hashtagsErr === 0){
         formSubmit(imgPreview.src, hashtags.value, textDescription.value, imgPreview.style.filter, imgPreview.style.transform)
         uploudForm.classList.add('hidden')
