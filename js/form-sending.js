@@ -10,7 +10,6 @@ async function sendForm(obj){
             body: JSON.stringify(obj)
         })
         const data = await response.json()
-        console.log(data)
     } catch (error) {
         console.log('Error:', error)
         errorMessageCreate()
@@ -37,6 +36,7 @@ const successButton = document.querySelector('.success__button')
 const success = document.querySelector('.success')
 
 function sendingForm(hashtagsErr, hashtags){
+    console.log(hashtags, hashtagsErr)
     if(hashtagsErr === 0){
         formSubmit(imgPreview.src, hashtags.value, textDescription.value, imgPreview.style.filter, imgPreview.style.transform)
         uploudForm.classList.add('hidden')
@@ -55,7 +55,8 @@ successButton.addEventListener('click', e=>{
 // error sending
 
 const errorBlock = document.querySelector('.error')
-const errorButton = document.querySelector('.error__button').addEventListener('click', e=> {
+
+document.querySelector('.error__button').addEventListener('click', e=> {
     errorBlock.classList.add('hidden')
 })
 
